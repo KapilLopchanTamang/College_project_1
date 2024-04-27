@@ -6,11 +6,11 @@
     <div class="panel-body"><!-- panel-body Begin -->
         <ul class="nav nav-pills nav-stacked category-menu"><!-- nav nav-pills nav-stacked category-menu Begin -->
             
-            <li><a href="#">Jackets</a></li>
-            <li><a href="#">Accessories</a></li>
+            <li><a href="#">Saree</a></li>
+            <li><a href="#">Dhaka Topi</a></li>
             <li><a href="#">Shoes</a></li>
             <li><a href="#">Coats</a></li>
-            <li><a href="#">Shirt</a></li>
+            <li><a href="#">T-Shirt</a></li>
             
         </ul><!-- nav nav-pills nav-stacked category-menu Finish -->
     </div><!-- panel-body Finish -->
