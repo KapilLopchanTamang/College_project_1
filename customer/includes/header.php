@@ -1,7 +1,9 @@
-<?php
-include("includes/db.php");
-?>
+<?php 
 
+include("includes/db.php");
+include("functions/functions.php");
+
+?>
 
 
 <!DOCTYPE html>
@@ -23,7 +25,7 @@ include("includes/db.php");
            <div class="col-md-6 offer"><!-- col-md-6 offer Begin -->
                
                <a href="#" class="btn btn-success btn-sm">Welcome</a>
-               <a href="checkout.php">4 Items In Your Cart | Total Price: $300 </a>
+               <a href="checkout.php"> <?php items(); ?> Items In Your Cart | Total Price: <?php total_price(); ?> </a>
                
            </div><!-- col-md-6 offer Finish -->
            
@@ -60,8 +62,8 @@ include("includes/db.php");
                
                <a href="../index.php" class="navbar-brand home"><!-- navbar-brand home Begin -->
                    
-                   <img src="images/logo-2.png" alt="M-dev-Store Logo" class="hidden-xs">
-                   <img src="images/logo-4.png" alt="M-dev-Store Logo Mobile" class="visible-xs">
+                   <img src="images/ecom-store-logo.png" alt="M-dev-Store Logo" class="hidden-xs">
+                   <img src="images/ecom-store-logo-mobile.png" alt="M-dev-Store Logo Mobile" class="visible-xs">
                    
                </a><!-- navbar-brand home Finish -->
                

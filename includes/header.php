@@ -4,42 +4,45 @@ include("includes/db.php");
 include("functions/functions.php");
 
 ?>
-<?php
+
+<?php 
+
 if(isset($_GET['pro_id'])){
-
+    
     $product_id = $_GET['pro_id'];
-
+    
     $get_product = "select * from products where product_id='$product_id'";
-
+    
     $run_product = mysqli_query($con,$get_product);
-
+    
     $row_product = mysqli_fetch_array($run_product);
-
+    
     $p_cat_id = $row_product['p_cat_id'];
-
+    
     $pro_title = $row_product['product_title'];
-
+    
     $pro_price = $row_product['product_price'];
-
+    
     $pro_desc = $row_product['product_desc'];
-
+    
     $pro_img1 = $row_product['product_img1'];
-
+    
     $pro_img2 = $row_product['product_img2'];
-
+    
     $pro_img3 = $row_product['product_img3'];
-
+    
     $get_p_cat = "select * from product_categories where p_cat_id='$p_cat_id'";
-
+    
     $run_p_cat = mysqli_query($con,$get_p_cat);
-
+    
     $row_p_cat = mysqli_fetch_array($run_p_cat);
-
+    
     $p_cat_title = $row_p_cat['p_cat_title'];
-
     
 }
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -59,7 +62,7 @@ if(isset($_GET['pro_id'])){
            <div class="col-md-6 offer"><!-- col-md-6 offer Begin -->
                
                <a href="#" class="btn btn-success btn-sm">Welcome</a>
-               <a href="checkout.php">4 Items In Your Cart | Total Price: $300 </a>
+               <a href="checkout.php"><?php items(); ?> Items In Your Cart | Total Price: <?php total_price(); ?> </a>
                
            </div><!-- col-md-6 offer Finish -->
            
@@ -71,7 +74,7 @@ if(isset($_GET['pro_id'])){
                        <a href="customer_register.php">Register</a>
                    </li>
                    <li>
-                       <a href="customer/my_account.php">My Account</a>
+                       <a href="checkout.php">My Account</a>
                    </li>
                    <li>
                        <a href="cart.php">Go To Cart</a>
@@ -96,8 +99,8 @@ if(isset($_GET['pro_id'])){
                
                <a href="index.php" class="navbar-brand home"><!-- navbar-brand home Begin -->
                    
-                   <img src="./images/logo-2.png" alt="M-dev-Store Logo" class="hidden-xs">
-                   <img src="images/logo-4.png" alt="M-dev-Store Logo Mobile" class="visible-xs">
+                   <img src="images/ecom-store-logo.png" alt="M-dev-Store Logo" class="hidden-xs">
+                   <img src="images/ecom-store-logo-mobile.png" alt="M-dev-Store Logo Mobile" class="visible-xs">
                    
                </a><!-- navbar-brand home Finish -->
                
@@ -149,7 +152,7 @@ if(isset($_GET['pro_id'])){
                    
                    <i class="fa fa-shopping-cart"></i>
                    
-                   <span>4 Items In Your Cart</span>
+                   <span><?php items(); ?> Items In Your Cart</span>
                    
                </a><!-- btn navbar-btn btn-primary Finish -->
                
@@ -194,4 +197,3 @@ if(isset($_GET['pro_id'])){
        </div><!-- container Finish -->
        
    </div><!-- navbar navbar-default Finish -->
-  
