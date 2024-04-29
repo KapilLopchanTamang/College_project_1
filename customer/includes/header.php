@@ -1,4 +1,5 @@
 <?php 
+session_start();
 
 include("includes/db.php");
 include("functions/functions.php");
@@ -24,7 +25,21 @@ include("functions/functions.php");
            
            <div class="col-md-6 offer"><!-- col-md-6 offer Begin -->
                
-               <a href="#" class="btn btn-success btn-sm">Welcome</a>
+               <a href="#" class="btn btn-success btn-sm">
+
+               <?php
+                if(!isset($_SESSION['customer_email'])){
+                    echo "Welcome Guest!";
+                    
+
+                }else{
+                    echo "Welcome: " . $_SESSION['customer_email'] . " ";
+
+                }
+                
+                ?>
+
+               </a>
                <a href="checkout.php"> <?php items(); ?> Items In Your Cart | Total Price: <?php total_price(); ?> </a>
                
            </div><!-- col-md-6 offer Finish -->
@@ -43,7 +58,19 @@ include("functions/functions.php");
                        <a href="../cart.php">Go To Cart</a>
                    </li>
                    <li>
-                       <a href="../checkout.php">Login</a>
+                       <a href="../checkout.php">
+                       <?php
+                       if(!isset($_SESSION['customer_email'])){
+                        echo "<a herf='cehckout.php'>Login</a>";
+                        
+    
+                    }else{
+                        echo " <a href='logout.php'>Log out</a>";
+    
+                    }
+                       
+                       ?>
+                       </a>
                    </li>
                    
                </ul><!-- menu Finish -->
@@ -62,8 +89,8 @@ include("functions/functions.php");
                
                <a href="../index.php" class="navbar-brand home"><!-- navbar-brand home Begin -->
                    
-                   <img src="images/ecom-store-logo.png" alt="M-dev-Store Logo" class="hidden-xs">
-                   <img src="images/ecom-store-logo-mobile.png" alt="M-dev-Store Logo Mobile" class="visible-xs">
+                   <img src="images/logo-2.png" alt="M-dev-Store Logo" class="hidden-xs">
+                   <img src="images/logo-4.png" alt="M-dev-Store Logo Mobile" class="visible-xs">
                    
                </a><!-- navbar-brand home Finish -->
                
