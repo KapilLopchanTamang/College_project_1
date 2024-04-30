@@ -46,7 +46,7 @@ include("includes/header.php");
                        
                    }
                    
-                   $get_slides = "select * from slider LIMIT 1,3";
+                   $get_slides = "select * from slider LIMIT 1,4";
                    
                    $run_slides = mysqli_query($con,$get_slides);
                    
