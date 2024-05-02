@@ -17,33 +17,37 @@
                 <h4>User Section</h4>
                 
                 <ul><!-- ul Begin -->
-                
-
-                <?php 
+                           
+                           <?php 
+                           
                            if(!isset($_SESSION['customer_email'])){
-                            echo"<a href='../checkout.php'>Login</a>";
-                           }else{ 
-                            echo "<a href='my_account.php?my_orders'>My Account</a>";
-                            
-
+                               
+                               echo"<a href='../checkout.php'>Login</a>";
+                               
+                           }else{
+                               
+                              echo"<a href='my_account.php?my_orders'>My Account</a>"; 
+                               
                            }
                            
-                           
-                           ?>    
-
-
+                           ?>
+                    
                     <li>
-                    <?php 
+                    
+                            <?php 
+                           
                            if(!isset($_SESSION['customer_email'])){
-                            echo"<a href='../checkout.php'>Login</a>";
-                           }else{ 
-                            echo "<a href='my_account.php?edit_account'>Edit Account</a>";
-                            
-
+                               
+                               echo"<a href='../checkout.php'>Login</a>";
+                               
+                           }else{
+                               
+                              echo"<a href='my_account.php?edit_account'>Edit Account</a>"; 
+                               
                            }
                            
-                           
-                           ?> 
+                           ?>
+                    
                     </li>
                 </ul><!-- ul Finish -->
                 
@@ -56,39 +60,37 @@
                 <h4>Top Products Categories</h4>
                 
                 <ul><!-- ul Begin -->
-                 
-                 <?php 
+                
+                    <?php 
                     
-                 $get_p_cats = "select * from product_categories";
-             
-                 $run_p_cats = mysqli_query($con,$get_p_cats);
-             
-                 while($row_p_cats=mysqli_fetch_array($run_p_cats)){
-                     
-                     $p_cat_id = $row_p_cats['p_cat_id'];
-                     
-                     $p_cat_title = $row_p_cats['p_cat_title'];
-                     
-                     echo "
-                     
-                         <li>
-                         
-                             <a href='../shop.php?p_cat=$p_cat_id'>
-                             
-                                 $p_cat_title
-                             
-                             </a>
-                         
-                         </li>
-                     
-                     ";
-                     
-                 }
-             
-             ?>
-         
-                 
-                 
+                        $get_p_cats = "select * from product_categories";
+                    
+                        $run_p_cats = mysqli_query($con,$get_p_cats);
+                    
+                        while($row_p_cats=mysqli_fetch_array($run_p_cats)){
+                            
+                            $p_cat_id = $row_p_cats['p_cat_id'];
+                            
+                            $p_cat_title = $row_p_cats['p_cat_title'];
+                            
+                            echo "
+                            
+                                <li>
+                                
+                                    <a href='../shop.php?p_cat=$p_cat_id'>
+                                    
+                                        $p_cat_title
+                                    
+                                    </a>
+                                
+                                </li>
+                            
+                            ";
+                            
+                        }
+                    
+                    ?>
+                
                 </ul><!-- ul Finish -->
                 
                 <hr class="hidden-md hidden-lg">
@@ -100,8 +102,7 @@
                 <h4>Find Us</h4>
                 
                 <p><!-- p Start -->
-                    
-                    <strong>Dhaka Store  inc.</strong>
+                <strong>Dhaka Store  inc.</strong>
                     <br/>Cibubur
                     <br/>Ciracas
                     <br/>0818-0683-3157
@@ -128,6 +129,8 @@
                     <div class="input-group"><!-- input-group begin -->
                         
                         <input type="text" class="form-control" name="email">
+                        
+                        <input type="hidden" value="M-devMedia" name="uri"/><input type="hidden" name="loc" value="en_US"/>
                         
                         <span class="input-group-btn"><!-- input-group-btn begin -->
                             
@@ -165,7 +168,7 @@
         </div><!-- col-md-6 Finish -->
         <div class="col-md-6"><!-- col-md-6 Begin -->
             
-            
+           
             
         </div><!-- col-md-6 Finish -->
     </div><!-- container Finish -->

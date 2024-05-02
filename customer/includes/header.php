@@ -45,7 +45,6 @@ if(isset($_GET['pro_id'])){
 
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -134,8 +133,8 @@ if(isset($_GET['pro_id'])){
                
                <a href="../index.php" class="navbar-brand home"><!-- navbar-brand home Begin -->
                    
-                   <img src="images/logo-2.png" alt="M-dev-Store Logo" class="hidden-xs">
-                   <img src="images/logo-3.png" alt="M-dev-Store Logo Mobile" class="visible-xs">
+                   <img src="images/logo-3.png" alt="M-dev-Store Logo" class="hidden-xs">
+                   <img src="images/ecom-store-logo-mobile.png" alt="M-dev-Store Logo Mobile" class="visible-xs">
                    
                </a><!-- navbar-brand home Finish -->
                
@@ -183,7 +182,7 @@ if(isset($_GET['pro_id'])){
                    
                </div><!-- padding-nav Finish -->
                
-               <a href="cart.php" class="btn navbar-btn btn-primary right"><!-- btn navbar-btn btn-primary Begin -->
+               <a href="../cart.php" class="btn navbar-btn btn-primary right"><!-- btn navbar-btn btn-primary Begin -->
                    
                    <i class="fa fa-shopping-cart"></i>
                    
