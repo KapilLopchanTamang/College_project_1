@@ -1,5 +1,8 @@
-<?php
-include("includes/header.php");
+<?php 
+
+    $active='Home';
+    include("includes/header.php");
+
 ?>
    
    <div class="container" id="slider"><!-- container Begin -->
@@ -18,12 +21,8 @@ include("includes/header.php");
                </ol><!-- carousel-indicators Finish -->
                
                <div class="carousel-inner"><!-- carousel-inner Begin -->
-
-
-
-
-            <!----------------------Slide-image-from-the-databse------------------------>
-               <?php 
+                  
+                  <?php 
                    
                    $get_slides = "select * from slider LIMIT 0,1";
                    
@@ -33,12 +32,17 @@ include("includes/header.php");
                        
                        $slide_name = $row_slides['slide_name'];
                        $slide_image = $row_slides['slide_image'];
+                       $slide_url = $row_slides['slide_url'];
                        
                        echo "
                        
                        <div class='item active'>
                        
-                       <img src='admin_area/slides_images/$slide_image'>
+                           <a href='$slide_url'>
+
+                                <img src='admin_area/slides_images/$slide_image'>
+
+                           </a>
                        
                        </div>
                        
@@ -46,7 +50,7 @@ include("includes/header.php");
                        
                    }
                    
-                   $get_slides = "select * from slider LIMIT 1,4";
+                   $get_slides = "select * from slider LIMIT 1,3";
                    
                    $run_slides = mysqli_query($con,$get_slides);
                    
@@ -54,12 +58,17 @@ include("includes/header.php");
                        
                        $slide_name = $row_slides['slide_name'];
                        $slide_image = $row_slides['slide_image'];
+                       $slide_url = $row_slides['slide_url'];
                        
                        echo "
                        
                        <div class='item'>
                        
-                       <img src='admin_area/slides_images/$slide_image'>
+                           <a href='$slide_url'>
+
+                                <img src='admin_area/slides_images/$slide_image'>
+
+                           </a>
                        
                        </div>
                        
@@ -96,6 +105,19 @@ include("includes/header.php");
        <div class="container"><!-- container Begin -->
            
            <div class="same-height-row"><!-- same-height-row Begin -->
+
+           <?php 
+           
+           $get_boxes = "select * from boxes_section";
+           $run_boxes = mysqli_query($con,$get_boxes);
+
+           while($run_boxes_section=mysqli_fetch_array($run_boxes)){
+
+            $box_id = $run_boxes_section['box_id'];
+            $box_title = $run_boxes_section['box_title'];
+            $box_desc = $run_boxes_section['box_desc'];
+           
+           ?>
                
                <div class="col-sm-4"><!-- col-sm-4 Begin -->
                    
@@ -107,49 +129,15 @@ include("includes/header.php");
                            
                        </div><!-- icon Finish -->
                        
-                       <h3><a href="#">Best Offer</a></h3>
+                       <h3><a href="#"><?php echo $box_title; ?></a></h3>
                        
-                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
-                       
-                   </div><!-- box same-height Finish -->
-                   
-               </div><!-- col-sm-4 Finish -->
-               
-               <div class="col-sm-4"><!-- col-sm-4 Begin -->
-                   
-                   <div class="box same-height"><!-- box same-height Begin -->
-                       
-                       <div class="icon"><!-- icon Begin -->
-                           
-                           <i class="fa fa-tag"></i>
-                           
-                       </div><!-- icon Finish -->
-                       
-                       <h3><a href="#">Best Prices</a></h3>
-                       
-                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                       <p> <?php echo $box_desc; ?> </p>
                        
                    </div><!-- box same-height Finish -->
                    
                </div><!-- col-sm-4 Finish -->
-               
-               <div class="col-sm-4"><!-- col-sm-4 Begin -->
-                   
-                   <div class="box same-height"><!-- box same-height Begin -->
-                       
-                       <div class="icon"><!-- icon Begin -->
-                           
-                           <i class="fa fa-thumbs-up"></i>
-                           
-                       </div><!-- icon Finish -->
-                       
-                       <h3><a href="#">100% Original</a></h3>
-                       
-                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                       
-                   </div><!-- box same-height Finish -->
-                   
-               </div><!-- col-sm-4 Finish -->
+
+            <?php    } ?>
                
            </div><!-- same-height-row Finish -->
            
@@ -180,16 +168,17 @@ include("includes/header.php");
    <div id="content" class="container"><!-- container Begin -->
        
        <div class="row"><!-- row Begin -->
-       
-       <?php
-       getPro();
-       
-       ?>           
+          
+          <?php 
+           
+           getPro();
+           
+           ?>
+           
        </div><!-- row Finish -->
        
    </div><!-- container Finish -->
-
-   <!--------------footer section ----------------->
+   
    <?php 
     
     include("includes/footer.php");

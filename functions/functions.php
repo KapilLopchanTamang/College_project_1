@@ -107,7 +107,7 @@ function getPro(){
                     
                     <p class='price'>
                     
-                        $ $pro_price
+                        Rs: $pro_price
                     
                     </p>
                     

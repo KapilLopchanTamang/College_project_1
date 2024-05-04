@@ -10,23 +10,21 @@
 
 <?php 
 
-    if(isset($_GET['edit_slide'])){
+    if(isset($_GET['edit_box'])){
         
-        $edit_slide_id = $_GET['edit_slide'];
+        $edit_box_id = $_GET['edit_box'];
         
-        $edit_slide = "select * from slider where slide_id='$edit_slide_id'";
+        $edit_box_query = "select * from boxes_section where box_id='$edit_box_id'";
         
-        $run_edit_slide = mysqli_query($con,$edit_slide);
+        $run_edit_box = mysqli_query($con,$edit_box_query);
         
-        $row_edit_slide = mysqli_fetch_array($run_edit_slide);
+        $row_edit_box = mysqli_fetch_array($run_edit_box);
         
-        $slide_id = $row_edit_slide['slide_id'];
+        $box_id = $row_edit_box['box_id'];
         
-        $slide_name = $row_edit_slide['slide_name'];
+        $box_title = $row_edit_box['box_title'];
         
-        $slide_url = $row_edit_slide['slide_url'];
-        
-        $slide_image = $row_edit_slide['slide_image'];
+        $box_desc = $row_edit_box['box_desc'];
         
     }
 
@@ -37,7 +35,7 @@
         <ol class="breadcrumb"><!-- breadcrumb begin -->
             <li>
                 
-                <i class="fa fa-dashboard"></i> Dashboard / Edit Slide
+                <i class="fa fa-dashboard"></i> Dashboard / Edit Box
                 
             </li>
         </ol><!-- breadcrumb finish -->
@@ -50,24 +48,24 @@
             <div class="panel-heading"><!-- panel-heading begin -->
                 <h3 class="panel-title"><!-- panel-title begin -->
                 
-                    <i class="fa fa-money fa-fw"></i> Edit Slide
+                    <i class="fa fa-pencil fa-fw"></i> Edit Box
                 
                 </h3><!-- panel-title finish -->
             </div><!-- panel-heading finish -->
             
             <div class="panel-body"><!-- panel-body begin -->
-                <form action="" class="form-horizontal" method="post" enctype="multipart/form-data"><!-- form-horizontal begin -->
+                <form action="" class="form-horizontal" method="post"><!-- form-horizontal begin -->
                     <div class="form-group"><!-- form-group begin -->
                     
                         <label for="" class="control-label col-md-3"><!-- control-label col-md-3 begin --> 
                         
-                            Slide Name 
+                            Box Title 
                         
                         </label><!-- control-label col-md-3 finish --> 
                         
                         <div class="col-md-6"><!-- col-md-6 begin -->
                         
-                            <input name="slide_name" type="text" class="form-control" value="<?php echo $slide_name; ?>">
+                            <input value=" <?php echo $box_title; ?> " name="box_title" type="text" class="form-control">
                         
                         </div><!-- col-md-6 finish -->
                     
@@ -76,13 +74,13 @@
                     
                         <label for="" class="control-label col-md-3"><!-- control-label col-md-3 begin --> 
                         
-                            Slide Url 
+                            Box Description 
                         
                         </label><!-- control-label col-md-3 finish --> 
                         
                         <div class="col-md-6"><!-- col-md-6 begin -->
                         
-                            <input name="slide_url" type="text" class="form-control" value="<?php echo $slide_url; ?>">
+                            <textarea type='text' name="box_desc" class="form-control"><?php echo $box_desc; ?></textarea>
                         
                         </div><!-- col-md-6 finish -->
                     
@@ -91,28 +89,13 @@
                     
                         <label for="" class="control-label col-md-3"><!-- control-label col-md-3 begin --> 
                         
-                            Slide Image
+                             
                         
                         </label><!-- control-label col-md-3 finish --> 
                         
                         <div class="col-md-6"><!-- col-md-6 begin -->
                         
-                            <input type="file" name="slide_image" class="form-control">
-                            
-                            <br/>
-                            
-                            <img src="slides_images/<?php echo $slide_image; ?>" class="img-responsive">
-                        
-                        </div><!-- col-md-6 finish -->
-                    
-                    </div><!-- form-group finish -->
-                    <div class="form-group"><!-- form-group begin -->
-                    
-                        <label for="" class="control-label col-md-3"><!-- control-label col-md-3 begin --></label><!-- control-label col-md-3 finish --> 
-                        
-                        <div class="col-md-6"><!-- col-md-6 begin -->
-                        
-                            <input type="submit" name="update" value="Update Now" class="btn btn-primary form-control">
+                            <input value="Update Box" name="update_box" type="submit" class="form-control btn btn-primary">
                         
                         </div><!-- col-md-6 finish -->
                     
@@ -126,32 +109,28 @@
 
 <?php  
 
-    if(isset($_POST['update'])){
-        
-        $slide_name = $_POST['slide_name'];
-        
-        $slide_url = $_POST['slide_url'];
-        
-        $slide_image = $_FILES['slide_image']['name'];
-        
-        $temp_name = $_FILES['slide_image']['tmp_name'];
-        
-        move_uploaded_file($temp_name,"slides_images/$slide_image");
-        
-        $update_slide = "update slider set slide_name='$slide_name',slide_url='$slide_url',slide_image='$slide_image' where slide_id='$slide_id'";
-        
-        $run_update_slide = mysqli_query($con,$update_slide);
-        
-        if($run_update_slide){
-            
-            echo "<script>alert('Your Slide has been updated Successfully')</script>"; 
-        
-            echo "<script>window.open('index.php?view_slides','_self')</script>";
-            
-        }
-        
-    }
+          if(isset($_POST['update_box'])){
+              
+              $box_title = $_POST['box_title'];
+              
+              $box_desc = $_POST['box_desc'];
+              
+              $update_box = "update boxes_section set box_title='$box_title',box_desc='$box_desc' where box_id='$box_id'";
+              
+              $run_box = mysqli_query($con,$update_box);
+              
+              if($run_box){
+                  
+                  echo "<script>alert('Your Box Has Been Updated')</script>";
+                  
+                  echo "<script>window.open('index.php?view_boxes','_self')</script>";
+                  
+              }
+              
+          }
 
 ?>
 
-<?php } ?>
+
+
+<?php } ?> 
