@@ -43,7 +43,9 @@
                        <div class='box'><!-- box Begin -->
                            <h1>Shop</h1>
                            <p>
-                               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo deleniti accusamus, consequuntur illum quasi ut. Voluptate a, ipsam repellendus ut fugiat minima? Id facilis itaque autem, officiis veritatis perferendis, quaerat!
+                           Welcome to Dhaka Store, your premier destination for a delightful online shopping experience. Founded on the principles of convenience, diversity, and reliability, Dhaka Store offers a comprehensive platform for users to explore and acquire an array of clothing products effortlessly. Our website is meticulously designed with user-friendliness in mind, ensuring seamless navigation and accessibility for shoppers of all backgrounds and preferences.
+
+
                            </p>
                        </div><!-- box Finish -->
 

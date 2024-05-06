@@ -26,11 +26,11 @@
          
         <p class="lead"><!-- lead Begin -->
             
-            <a href="#">
+            <a href="pay.php">
                 
-                Paypall Payment
+                Khalti payment
                 
-                <img class="img-responsive" src="images/paypall_img.png" alt="img-paypall">
+                <img class="img-responsive" src="images/khalti.png" alt="img-paypall">
                 
             </a>
             
