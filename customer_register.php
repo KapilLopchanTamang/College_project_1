@@ -20,17 +20,7 @@
                
            </div><!-- col-md-12 Finish -->
            
-           <div class="col-md-3"><!-- col-md-3 Begin -->
-   
-   <?php 
-    
-    include("includes/sidebar.php");
-    
-    ?>
-               
-           </div><!-- col-md-3 Finish -->
-           
-           <div class="col-md-9"><!-- col-md-9 Begin -->
+           <div class="col-md-12"><!-- col-md-12 Begin -->
                
                <div class="box"><!-- box Begin -->
                    
@@ -67,7 +57,14 @@
                                <input type="password" class="form-control" name="c_pass" required>
                                
                            </div><!-- form-group Finish -->
-                            
+                           
+                           <div class="form-group"><!-- form-group Begin -->
+                               
+                               <label>Your Country</label>
+                               
+                               <input type="text" class="form-control" name="c_country" required>
+                               
+                           </div><!-- form-group Finish -->
                            
                            <div class="form-group"><!-- form-group Begin -->
                                
@@ -117,7 +114,7 @@
                    
                </div><!-- box Finish -->
                
-           </div><!-- col-md-9 Finish -->
+           </div><!-- col-md-12 Finish -->
            
        </div><!-- container Finish -->
    </div><!-- #content Finish -->
@@ -150,6 +147,8 @@ if(isset($_POST['register'])){
     
     $c_city = $_POST['c_city'];
     
+    $c_contact = $_POST['c_contact'];
+    
     $c_address = $_POST['c_address'];
     
     $c_image = $_FILES['c_image']['name'];
@@ -160,7 +159,7 @@ if(isset($_POST['register'])){
     
     move_uploaded_file($c_image_tmp,"customer/customer_images/$c_image");
     
-    $insert_customer = "insert into customers (customer_name,customer_email,customer_pass,customer_city,customer_contact,customer_address,customer_image,customer_ip) values ('$c_name','$c_email','$c_pass','$c_city','$c_contact','$c_address','$c_image','$c_ip')";
+    $insert_customer = "insert into customers (customer_name,customer_email,customer_pass,customer_country,customer_city,customer_contact,customer_address,customer_image,customer_ip) values ('$c_name','$c_email','$c_pass','$c_country','$c_city','$c_contact','$c_address','$c_image','$c_ip')";
     
     $run_customer = mysqli_query($con,$insert_customer);
     

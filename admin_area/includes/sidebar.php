@@ -121,6 +121,25 @@
             </li><!-- li finish -->
             
             <li><!-- li begin -->
+                <a href="#" data-toggle="collapse" data-target="#manufacturer"><!-- a href begin -->
+                        
+                        <i class="fa fa-fw fa-star"></i> manufacturer
+                        <i class="fa fa-fw fa-caret-down"></i>
+                        
+                </a><!-- a href finish -->
+                
+                <ul id="manufacturer" class="collapse"><!-- collapse begin -->
+                    <li><!-- li begin -->
+                        <a href="index.php?insert_manufacturer"> Insert manufacturer </a>
+                    </li><!-- li finish -->
+                    <li><!-- li begin -->
+                        <a href="index.php?view_manufacturers"> View manufacturer </a>
+                    </li><!-- li finish -->
+                </ul><!-- collapse finish -->
+                
+            </li><!-- li finish -->
+            
+            <li><!-- li begin -->
                 <a href="#" data-toggle="collapse" data-target="#p_cat"><!-- a href begin -->
                         
                         <i class="fa fa-fw fa-edit"></i> Products Categories
@@ -195,6 +214,7 @@
                 </ul><!-- collapse finish -->
                 
             </li><!-- li finish -->
+            
             <li><!-- li begin -->
                 <a href="#" data-toggle="collapse" data-target="#terms"><!-- a href begin -->
                         
@@ -231,13 +251,12 @@
                     <i class="fa fa-fw fa-money"></i> View Payments
                 </a><!-- a href finish -->
             </li><!-- li finish -->
-
+            
             <li><!-- li begin -->
                 <a href="index.php?edit_css"><!-- a href begin -->
                     <i class="fa fa-fw fa-pencil"></i> CSS Editor
                 </a><!-- a href finish -->
             </li><!-- li finish -->
-            
             
             <li><!-- li begin -->
                 <a href="#" data-toggle="collapse" data-target="#users"><!-- a href begin -->

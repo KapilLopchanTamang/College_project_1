@@ -20,17 +20,7 @@
                
            </div><!-- col-md-12 Finish -->
            
-           <div class="col-md-3"><!-- col-md-3 Begin -->
-   
-   <?php 
-    
-    include("includes/sidebar.php");
-    
-    ?>
-               
-           </div><!-- col-md-3 Finish -->
-           
-           <div class="col-md-9"><!-- col-md-9 Begin -->
+           <div class="col-md-12"><!-- col-md-12 Begin -->
                
                <div class="box"><!-- box Begin -->
                    
@@ -108,7 +98,7 @@
                            
                            $sender_message = $_POST['message'];
                            
-                           $receiver_email = "dhakastore@gmail.com";
+                           $receiver_email = "mugianto4th@gmail.com";
                            
                            mail($receiver_email,$sender_name,$sender_subject,$sender_message,$sender_email);
                            
@@ -120,7 +110,7 @@
                            
                            $msg = "Thanks for sending us message. ASAP we will reply your message";
                            
-                           $from = "dhakastore@gmail.com";
+                           $from = "mugianto4th@gmail.com";
                            
                            mail($email,$subject,$msg,$from);
                            
@@ -134,7 +124,7 @@
                    
                </div><!-- box Finish -->
                
-           </div><!-- col-md-9 Finish -->
+           </div><!-- col-md-12 Finish -->
            
        </div><!-- container Finish -->
    </div><!-- #content Finish -->
